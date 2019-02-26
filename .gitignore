@@ -30,6 +30,14 @@ jmh/*.json
 # HIVE
 metastore_db/
 **/kafka/src/test/scala/filodb/kafka/shard*
-*lib*
 
 coordinator/src/test/resources/
+
+# Rust / memory lib
+**/*.rs.bk
+rust/out.stacks
+rust/*.svg
+rust/Cargo.lock
+memory/src/main/resources/*.dylib
+memory/src/main/resources/*.so
+

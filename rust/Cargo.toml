@@ -1,0 +1,29 @@
+[package]
+name = "compvec"
+version = "0.1.0"
+authors = ["Evan Chan <velvia@apple.com>"]
+edition = "2018"
+
+[dependencies]
+memoffset = "0.2"
+byteorder = "1"
+plain = "0.2.3"
+
+[dev-dependencies]
+criterion = "^0.2"
+proptest = "0.9.1"
+
+[[bench]]
+name = "bench"
+harness = false
+
+[profile.bench]
+opt-level = 3
+debug = true
+
+[profile.release]
+debug = true
+
+[lib]
+# NOTE: Type "cdylib" is for JVM integration;  "lib" is needed for benchmarks
+crate-type = ["staticlib", "cdylib", "lib"]
